@@ -15,7 +15,6 @@ function fetchIndCoins(coin){
 }
 
 //event listner for submit
-
 document.querySelector('.search').addEventListener('submit', e =>{
     e.preventDefault()
     fetchIndCoins((e.target.text.value).toLowerCase())
@@ -56,9 +55,11 @@ function fillTable(data){
 
 //create summary
 function createSummary(data){
+    //remove previous summary if exists
     if(document.querySelector(`#summary`).children.length > 0){
         document.querySelector('article').remove()
     }
+    //creating summary html elements
     const article = document.createElement('article')
     const h2 = document.createElement('h2')
     h2.innerText = `${data.name} Summary`
@@ -78,6 +79,7 @@ function createSummary(data){
     const pMarketCap = document.createElement('p')
     pMarketCap.innerText = `Market Cap: ${Number((Math.round(data.marketCapUsd*100)/100).toFixed(2)).toLocaleString('en-US', {style:'currency', currency:'USD'})}`
 
+    //appending html elements
     article.appendChild(pSymbol)    
     article.appendChild(pPrice)    
     article.appendChild(pChange) 

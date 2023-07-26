@@ -8,6 +8,19 @@ function fetchCoins(){
 
 fetchCoins()
 
+function fetchIndCoins(coin){
+    fetch(`https://api.coincap.io/v2/assets/${coin}`)
+    .then((res) => res.json())
+    .then (coinData => createSummary(coinData.data))
+}
+
+//event listner for submit
+
+document.querySelector('.search').addEventListener('submit', e =>{
+    e.preventDefault()
+    fetchIndCoins((e.target.text.value).toLowerCase())
+})
+
 //fill table contents
 
 function fillTable(data){
@@ -62,6 +75,8 @@ function createSummary(data){
     article.appendChild(pChange) 
     document.querySelector('#summary').appendChild(article)   
 }
+
+fetchIndCoins
 // class CoinObj{
 //     constructor(data){
 //         this.data.id = data.id

@@ -66,13 +66,26 @@ function createSummary(data){
     const pSymbol = document.createElement('p')
     pSymbol.innerText = `Symbol: ${data.symbol}`
     const pPrice = document.createElement('p')
-    pPrice.innerText = `${Number((Math.round(data.priceUsd*100)/100).toFixed(2)).toLocaleString('en-US', {style:'currency', currency:'USD'})}`
+    pPrice.innerText = `Price: ${Number((Math.round(data.priceUsd*100)/100).toFixed(2)).toLocaleString('en-US', {style:'currency', currency:'USD'})}`
     const pChange = document.createElement('p')
-    pChange.innerText = `Percent Change over 24 hours: ${(Math.round(data.changePercent24Hr*100)/100)}`
+    pChange.innerText = `Change (24 hours): ${(Math.round(data.changePercent24Hr*100)/100)}`
+    const pVolume = document.createElement('p')
+    pVolume.innerText = `Volume (24 hours): ${(Math.round(data.volumeUsd24Hr*100)/100).toLocaleString('en-US', {style:'currency', currency:'USD'})}`
+    const pSupply = document.createElement('p')
+    pSupply.innerText = `Supply: ${(Math.round(data.supply*100)/100).toLocaleString('en-US')} ${data.symbol}`
+    const pMaxSupply = document.createElement('p')
+    pMaxSupply.innerText = `Max Supply: ${(Math.round(data.maxSupply*100)/100).toLocaleString('en-US')} ${data.symbol}`
+    const pMarketCap = document.createElement('p')
+    pMarketCap.innerText = `Market Cap: ${Number((Math.round(data.marketCapUsd*100)/100).toFixed(2)).toLocaleString('en-US', {style:'currency', currency:'USD'})}`
 
     article.appendChild(pSymbol)    
     article.appendChild(pPrice)    
     article.appendChild(pChange) 
+    article.appendChild(pSupply)
+    article.appendChild(pMaxSupply)
+    article.appendChild(pVolume)
+    article.appendChild(pMarketCap)
+
     document.querySelector('#summary').appendChild(article)   
 }
 

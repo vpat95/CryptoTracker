@@ -1,3 +1,18 @@
+
+  body {
+    margin: 0;
+    background-color: white;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/011/231/538/original/abstract-geometric-background-with-isometric-digital-blocks-blockchain-concept-and-modern-technology-illustration-free-vector.jpg");
+    color: whitesmoke;
+  }
+  header {
+    padding: 20px;
+    text-align: center;
+
+    color: white;
+    font-size: 30px;
+  }
+
 .styled-table {
     border-collapse: collapse;
     margin-left: auto;
@@ -6,10 +21,11 @@
     font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    opacity: 65%;
 }
 .styled-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
+    background-color: #727272;
+    color: #bbbbbb;
     text-align: left;
 }
 .styled-table th {
@@ -25,18 +41,15 @@
 }
 .styled-table tbody tr {
     border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: rgb(62, 68, 74);
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+    border-bottom: 2px solid #a697ea;
 }
 .styled-table tbody tr.active-row {
     font-weight: bold;
-    color: #009879;
+    color: #6d6d6d;
 }
 
 h1 {
@@ -50,4 +63,9 @@ form {
 
 div#summary {
     margin-left: 50px;
+}
+
+div#table > h2{
+    text-align: center;
+    color: silver;
 }
